@@ -26,9 +26,9 @@ urlpatterns = [
     path('fetchpage',views.fetchpage),
     path('homepage',views.index),
     path('about',views.about),
-    path('contact_us_data',views.contact_us_data),
+    # path('contact_us_data',views.contact_us_data),
     path('contact',views.contact),
-    path('dark_homepage',views.dark_index_1),
+    path('',views.dark_index_1),
     path('dark_homepage2',views.dark_index_2),
     path('404',views.error_404),
     path('index2',views.homepage2),
@@ -44,6 +44,8 @@ urlpatterns = [
     path('car_dark_single',views.dark_car_single),
     path('quick_booking',views.quick_booking),
     path('booking',views.booking),
+    path('checklogin',views.checklogin),
+    path('logout',views.logout),
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 
 

@@ -5,7 +5,7 @@
 <!-- Mirrored from www.madebydesignesia.com/themes/rentaly/02_dark-index-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 26 Sep 2025 09:32:24 GMT -->
 <head>
     <title>Rentaly - Multipurpose Vehicle Car Rental Website Template</title>
-    <link rel="icon" href="images/icon.png" type="image/gif" sizes="16x16">
+    <link rel="icon" href="static/images/icon.png" type="image/gif" sizes="16x16">
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Rentaly - Multipurpose Vehicle Car Rental Website Template" name="description">
@@ -13,13 +13,13 @@
     <meta content="" name="author">
     <!-- CSS Files
     ================================================== -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
-    <link href="css/mdb.min.css" rel="stylesheet" type="text/css" id="mdb">
-    <link href="css/plugins.css" rel="stylesheet" type="text/css">
-    <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link href="css/coloring.css" rel="stylesheet" type="text/css">
+    <link href="static/css/bootstrap.min.css" rel="stylesheet" type="text/css" id="bootstrap">
+    <link href="static/css/mdb.min.css" rel="stylesheet" type="text/css" id="mdb">
+    <link href="static/css/plugins.css" rel="stylesheet" type="text/css">
+    <link href="static/css/style.css" rel="stylesheet" type="text/css">
+    <link href="static/css/coloring.css" rel="stylesheet" type="text/css">
     <!-- color scheme -->
-    <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet" type="text/css">
+    <link id="colors" href="static/css/colors/scheme-01.css" rel="stylesheet" type="text/css">
 </head>
 
 <body onload="initialize()" class="dark-scheme">
@@ -62,8 +62,8 @@
                                     <!-- logo begin -->
                                     <div id="logo">
                                         <a href="index.html">
-                                            <img class="logo-1" src="images/logo-light.png" alt="">
-                                            <img class="logo-2" src="images/logo-light.png" alt="">
+                                            <img class="logo-1" src="static/images/logo-light.png" alt="">
+                                            <img class="logo-2" src="static/images/logo-light.png" alt="">
                                         </a>
                                     </div>
                                     <!-- logo close -->
@@ -155,8 +155,12 @@
                             </div>
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
-                                    <a href="login.html" class="btn-main">Sign In</a>
-                                    <span id="menu-btn"></span>
+                                        {% if request.session.log_id %}
+                                        <a href="/logout" class="btn-main">Logout</a>
+                                        <span id="menu-btn">Welcome,{{ request.session.log_name }}</span>
+                                    {% else %}
+                                        <a href="login.html" class="btn-main">Sign In</a>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -170,7 +174,7 @@
             <div id="top"></div>
             
             <section id="section-hero" aria-label="section" class="jarallax text-light">
-                <img src="images/background/15.jpg" class="jarallax-img" alt="">
+                <img src="static/images/background/15.jpg" class="jarallax-img" alt="">
                 <div class="container">
                     <div class="row">
                         <div class="spacer-double"></div>
@@ -343,10 +347,10 @@
                                         <div class="col-lg-4 mb30">
                                             <h5>Vehicle Type</h5>
                                             <select name='Vehicle Type' id="vehicle_type" class="form-control">
-                                              <option value='option-1' data-src="images/select-form/car.png">Car</option>
-                                              <option value='option-2' data-src="images/select-form/van.png">Van</option>
-                                              <option value='option-3' data-src="images/select-form/minibus.png">Minibus</option>
-                                              <option value='option-3' data-src="images/select-form/sportscar.png">Prestige</option>
+                                              <option value='option-1' data-src="static/images/select-form/car.png">Car</option>
+                                              <option value='option-2' data-src="static/images/select-form/van.png">Van</option>
+                                              <option value='option-3' data-src="static/images/select-form/minibus.png">Minibus</option>
+                                              <option value='option-3' data-src="static/images/select-form/sportscar.png">Prestige</option>
                                             </select>
 
                                             <input type='submit' id='send_message' value='Find a Vehicle' class="btn-main btn-fullwidth pull-right">
@@ -407,7 +411,7 @@
                             <div class="col-lg-12">
                                 <div class="de-item alt-2 mb30">
                                     <div class="d-img">
-                                        <img src="images/cars-alt/jeep-renegade.png" class="img-fluid" alt="">
+                                        <img src="static/images/cars-alt/jeep-renegade.png" class="img-fluid" alt="">
                                     </div>
                                     <div class="d-info">
                                         <div class="d-text">
@@ -416,10 +420,10 @@
                                                 <i class="fa fa-heart"></i><span>74</span>
                                             </div>
                                             <div class="d-atr-group">
-                                                <span class="d-atr"><img src="images/icons/1-green.svg" alt="">5</span>
-                                                <span class="d-atr"><img src="images/icons/2-green.svg" alt="">2</span>
-                                                <span class="d-atr"><img src="images/icons/3-green.svg" alt="">4</span>
-                                                <span class="d-atr"><img src="images/icons/4-green.svg" alt="">SUV</span>
+                                                <span class="d-atr"><img src="static/images/icons/1-green.svg" alt="">5</span>
+                                                <span class="d-atr"><img src="static/images/icons/2-green.svg" alt="">2</span>
+                                                <span class="d-atr"><img src="static/images/icons/3-green.svg" alt="">4</span>
+                                                <span class="d-atr"><img src="static/images/icons/4-green.svg" alt="">SUV</span>
                                             </div>
                                             <div class="d-price">
                                                 Daily rate from <span>$265</span>
@@ -433,7 +437,7 @@
                             <div class="col-lg-12">
                                 <div class="de-item alt-2 mb30">
                                     <div class="d-img">
-                                        <img src="images/cars-alt/bmw-m5.png" class="img-fluid" alt="">
+                                        <img src="static/images/cars-alt/bmw-m5.png" class="img-fluid" alt="">
                                     </div>
                                     <div class="d-info">
                                         <div class="d-text">
@@ -442,10 +446,10 @@
                                                 <i class="fa fa-heart"></i><span>36</span>
                                             </div>
                                             <div class="d-atr-group">
-                                                <span class="d-atr"><img src="images/icons/1-green.svg" alt="">5</span>
-                                                <span class="d-atr"><img src="images/icons/2-green.svg" alt="">2</span>
-                                                <span class="d-atr"><img src="images/icons/3-green.svg" alt="">4</span>
-                                                <span class="d-atr"><img src="images/icons/4-green.svg" alt="">Sedan</span>
+                                                <span class="d-atr"><img src="static/images/icons/1-green.svg" alt="">5</span>
+                                                <span class="d-atr"><img src="static/images/icons/2-green.svg" alt="">2</span>
+                                                <span class="d-atr"><img src="static/images/icons/3-green.svg" alt="">4</span>
+                                                <span class="d-atr"><img src="static/images/icons/4-green.svg" alt="">Sedan</span>
                                             </div>
                                             <div class="d-price">
                                                 Daily rate from <span>$244</span>
@@ -459,7 +463,7 @@
                             <div class="col-lg-12">
                                 <div class="de-item alt-2 mb30">
                                     <div class="d-img">
-                                        <img src="images/cars-alt/ferrari-enzo.png" class="img-fluid" alt="">
+                                        <img src="static/images/cars-alt/ferrari-enzo.png" class="img-fluid" alt="">
                                     </div>
                                     <div class="d-info">
                                         <div class="d-text">
@@ -468,10 +472,10 @@
                                                 <i class="fa fa-heart"></i><span>85</span>
                                             </div>
                                             <div class="d-atr-group">
-                                                <span class="d-atr"><img src="images/icons/1-green.svg" alt="">5</span>
-                                                <span class="d-atr"><img src="images/icons/2-green.svg" alt="">2</span>
-                                                <span class="d-atr"><img src="images/icons/3-green.svg" alt="">4</span>
-                                                <span class="d-atr"><img src="images/icons/4-green.svg" alt="">Exotic Car</span>
+                                                <span class="d-atr"><img src="static/images/icons/1-green.svg" alt="">5</span>
+                                                <span class="d-atr"><img src="static/images/icons/2-green.svg" alt="">2</span>
+                                                <span class="d-atr"><img src="static/images/icons/3-green.svg" alt="">4</span>
+                                                <span class="d-atr"><img src="static/images/icons/4-green.svg" alt="">Exotic Car</span>
                                             </div>
                                             <div class="d-price">
                                                 Daily rate from <span>$167</span>
@@ -485,7 +489,7 @@
                             <div class="col-lg-12">
                                 <div class="de-item alt-2 mb30">
                                     <div class="d-img">
-                                        <img src="images/cars-alt/ford-raptor.png" class="img-fluid" alt="">
+                                        <img src="static/images/cars-alt/ford-raptor.png" class="img-fluid" alt="">
                                     </div>
                                     <div class="d-info">
                                         <div class="d-text">
@@ -494,10 +498,10 @@
                                                 <i class="fa fa-heart"></i><span>59</span>
                                             </div>
                                             <div class="d-atr-group">
-                                                <span class="d-atr"><img src="images/icons/1-green.svg" alt="">5</span>
-                                                <span class="d-atr"><img src="images/icons/2-green.svg" alt="">2</span>
-                                                <span class="d-atr"><img src="images/icons/3-green.svg" alt="">4</span>
-                                                <span class="d-atr"><img src="images/icons/4-green.svg" alt="">Truck</span>
+                                                <span class="d-atr"><img src="static/images/icons/1-green.svg" alt="">5</span>
+                                                <span class="d-atr"><img src="static/images/icons/2-green.svg" alt="">2</span>
+                                                <span class="d-atr"><img src="static/images/icons/3-green.svg" alt="">4</span>
+                                                <span class="d-atr"><img src="static/images/icons/4-green.svg" alt="">Truck</span>
                                             </div>
                                             <div class="d-price">
                                                 Daily rate from <span>$147</span>
@@ -511,7 +515,7 @@
                             <div class="col-lg-12">
                                 <div class="de-item alt-2 mb30">
                                     <div class="d-img">
-                                        <img src="images/cars-alt/mini-cooper.png" class="img-fluid" alt="">
+                                        <img src="static/images/cars-alt/mini-cooper.png" class="img-fluid" alt="">
                                     </div>
                                     <div class="d-info">
                                         <div class="d-text">
@@ -520,10 +524,10 @@
                                                 <i class="fa fa-heart"></i><span>19</span>
                                             </div>
                                             <div class="d-atr-group">
-                                                <span class="d-atr"><img src="images/icons/1-green.svg" alt="">5</span>
-                                                <span class="d-atr"><img src="images/icons/2-green.svg" alt="">2</span>
-                                                <span class="d-atr"><img src="images/icons/3-green.svg" alt="">4</span>
-                                                <span class="d-atr"><img src="images/icons/4-green.svg" alt="">Hatchback</span>
+                                                <span class="d-atr"><img src="static/images/icons/1-green.svg" alt="">5</span>
+                                                <span class="d-atr"><img src="static/images/icons/2-green.svg" alt="">2</span>
+                                                <span class="d-atr"><img src="static/images/icons/3-green.svg" alt="">4</span>
+                                                <span class="d-atr"><img src="static/images/icons/4-green.svg" alt="">Hatchback</span>
                                             </div>
                                             <div class="d-price">
                                                 Daily rate from <span>$238</span>
@@ -537,7 +541,7 @@
                             <div class="col-lg-12">
                                 <div class="de-item alt-2 mb30">
                                     <div class="d-img">
-                                        <img src="images/cars-alt/vw-polo.png" class="img-fluid" alt="">
+                                        <img src="static/images/cars-alt/vw-polo.png" class="img-fluid" alt="">
                                     </div>
                                     <div class="d-info">
                                         <div class="d-text">
@@ -546,10 +550,10 @@
                                                 <i class="fa fa-heart"></i><span>79</span>
                                             </div>
                                             <div class="d-atr-group">
-                                                <span class="d-atr"><img src="images/icons/1-green.svg" alt="">5</span>
-                                                <span class="d-atr"><img src="images/icons/2-green.svg" alt="">2</span>
-                                                <span class="d-atr"><img src="images/icons/3-green.svg" alt="">4</span>
-                                                <span class="d-atr"><img src="images/icons/4-green.svg" alt="">Hatchback</span>
+                                                <span class="d-atr"><img src="static/images/icons/1-green.svg" alt="">5</span>
+                                                <span class="d-atr"><img src="static/images/icons/2-green.svg" alt="">2</span>
+                                                <span class="d-atr"><img src="static/images/icons/3-green.svg" alt="">4</span>
+                                                <span class="d-atr"><img src="static/images/icons/4-green.svg" alt="">Hatchback</span>
                                             </div>
                                             <div class="d-price">
                                                 Daily rate from <span>$106</span>
@@ -567,7 +571,7 @@
             </section>
 
             <section class="text-light jarallax">
-                <img src="images/background/9.jpg" class="jarallax-img" alt="">
+                <img src="static/images/background/9.jpg" class="jarallax-img" alt="">
                 <div class="container">
                     <div class="row g-5">
                         <div class="col-lg-6 wow fadeInRight">
@@ -635,7 +639,7 @@
                         </div>
 
                         <div class="col-lg-6">
-                            <img src="images/misc/car-2.png" alt="" class="img-fluid wow fadeInUp">
+                            <img src="static/images/misc/car-2.png" alt="" class="img-fluid wow fadeInUp">
                         </div>
 
                         <div class="col-lg-3">
@@ -678,7 +682,7 @@
                                        <span class="by">Stepanie Hutchkiss</span>
                                    </blockquote>
                                 </div> 
-                                <img src="images/testimonial/1.jpg" class="img-fluid" alt="">
+                                <img src="static/images/testimonial/1.jpg" class="img-fluid" alt="">
                             </div>
                         </div>
 
@@ -701,7 +705,7 @@
                                        <span class="by">Jovan Reels</span>
                                    </blockquote>
                                 </div>
-                                <img src="images/testimonial/2.jpg" class="img-fluid" alt="">
+                                <img src="static/images/testimonial/2.jpg" class="img-fluid" alt="">
                             </div>
                         </div>
                         
@@ -725,7 +729,7 @@
                                        <span class="by">Kanesha Keyton</span>
                                    </blockquote>
                                 </div>
-                                <img src="images/testimonial/3.jpg" class="img-fluid" alt="">
+                                <img src="static/images/testimonial/3.jpg" class="img-fluid" alt="">
                             </div>
                         </div>
 
@@ -751,7 +755,7 @@
                                             <div class="m">10</div>
                                             <div class="d">MAR</div>
                                         </div>
-                                        <img alt="" src="images/news/pic-blog-1.jpg" class="lazy">
+                                        <img alt="" src="static/images/news/pic-blog-1.jpg" class="lazy">
                                     </div>
                                     <div class="post-text">                         
                                         <h4><a href="news-single.html">Enjoy Best Travel Experience<span></span></a></h4>
@@ -770,7 +774,7 @@
                                             <div class="m">12</div>
                                             <div class="d">MAR</div>
                                         </div>
-                                        <img alt="" src="images/news/pic-blog-2.jpg" class="lazy">
+                                        <img alt="" src="static/images/news/pic-blog-2.jpg" class="lazy">
                                     </div>
                                     <div class="post-text">                           
                                         <h4><a href="news-single.html">The Future of Car Rent<span></span></a></h4>
@@ -789,7 +793,7 @@
                                             <div class="m">14</div>
                                             <div class="d">MAR</div>
                                         </div>
-                                        <img alt="" src="images/news/pic-blog-3.jpg" class="lazy">
+                                        <img alt="" src="static/images/news/pic-blog-3.jpg" class="lazy">
                                     </div>
                                     <div class="post-text">                            
                                         <h4><a href="news-single.html">Holiday Tips For Backpacker<span></span></a></h4>
@@ -804,7 +808,7 @@
             </section>
 
             <section class="text-light jarallax" aria-label="section">
-                <img src="images/background/3.jpg" alt="" class="jarallax-img">
+                <img src="static/images/background/3.jpg" alt="" class="jarallax-img">
                 <div class="container">
                     <div class="row">
                     <div class="col-lg-3">
@@ -1092,8 +1096,8 @@
     </div>
     <!-- Javascript Files
     ================================================== -->
-    <script src="js/plugins.js"></script>
-    <script src="js/designesia.js"></script>
+    <script src="static/js/plugins.js"></script>
+    <script src="static/js/designesia.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgiM7ogCAA2Y5pgSk2KXZfxF5S_1jsptA&amp;libraries=places&amp;callback=initPlaces" async="" defer=""></script>
 
 </body>

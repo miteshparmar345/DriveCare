@@ -177,12 +177,12 @@
                                     <div class="padding40 rounded-3 shadow-soft" data-bgcolor="#ffffff">
                                         <h4>Login</h4>
                                         <div class="spacer-10"></div>
-                                        <form id="form_register" class="form-border" method="post" action="https://www.madebydesignesia.com/themes/rentaly/account-dashboard.html">
+                                        <form id="form_register" class="form-border" method="post" action="checklogin">{% csrf_token %}
                                             <div class="field-set">
-                                                <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" />
+                                                <input type="text" name="email" id="email" class="form-control" placeholder="Enter Your Email" />
                                             </div>
                                             <div class="field-set">
-                                                <input type="text" name="name" id="name" class="form-control" placeholder="Your Name" />
+                                                <input type="text" name="password" id="password" class="form-control" placeholder="Enter Your Password" />
                                             </div>
                                             <div id="submit">
                                                 <input type="submit" id="send_message" value="Sign In" class="btn-main btn-fullwidth rounded-3" />
