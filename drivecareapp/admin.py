@@ -10,7 +10,7 @@ class Userdata(admin.ModelAdmin):
 # class contactdata(admin.ModelAdmin):
 #     list_display_contact = ['name', 'email', 'phone', 'message']
 
-admin.site.register(registertable,Userdata)
+admin.site.register(logintable,Userdata)
 # admin.site.register(contactpage,contactdata)
 
 

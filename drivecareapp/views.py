@@ -14,7 +14,7 @@ def checklogin(request):
     upassword= request.POST.get('password')
 
     try:
-        userdata = registertable.objects.get(email=uemail,password=upassword)
+        userdata = logintable.objects.get(email=uemail,password=upassword)
         request.session['log_id'] =userdata.id
         request.session['log_name']=userdata.name
         request.session['log_email']=userdata.email
@@ -22,7 +22,7 @@ def checklogin(request):
         request.session.save()
         messages.success(request,'Login Successful')
         return render(request,'dark-index-1.html')
-    except registertable.DoesNotExist:
+    except logintable.DoesNotExist:
         messages.error(request,'Login Unsuccessful')
     return render(request,'login.html')
 
@@ -33,7 +33,7 @@ def fetchpage(request):
    phone=request.POST.get('phone')
    password=request.POST.get('password')
    status=request.POST.get('status')
-   insert_query=registertable(name=name,email=email,role=role,phone=phone,password=password,status='active')
+   insert_query=logintable(name=name,email=email,role=role,phone=phone,password=password,status='active')
    insert_query.save()
    print("data inserted")
    return render(request,'login.html')

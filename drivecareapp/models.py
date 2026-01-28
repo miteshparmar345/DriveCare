@@ -11,7 +11,7 @@ STATUS=[
 
 # Create your models here.
 # create class for registertable
-class registertable(models.Model):
+class logintable(models.Model):
     name = models.CharField(max_length=50)
     email= models.EmailField()
     password = models.CharField(max_length=30)
@@ -22,11 +22,11 @@ class registertable(models.Model):
     def __str__(self):
         return self.name
 
-# class contactpage(models.Model):
-#     name = models.CharField(max_length=50)
-#     email= models.EmailField()
-#     phone= models.BigIntegerField()
-#     massage= models.TextField()
+class contactpage(models.Model):
+    name = models.CharField(max_length=50)
+    email= models.EmailField()
+    phone= models.BigIntegerField()
+    massage= models.TextField()
 
 class category(models.Model):
     cat_name= models.CharField(max_length=30)
@@ -42,9 +42,15 @@ SERVICE_STATUS=[
 
 class services(models.Model):
     cat_id=models.ForeignKey(category,on_delete=models.CASCADE)
-    garage_id=models.ForeignKey(registertable,on_delete=models.CASCADE)
+    garage_id=models.ForeignKey(logintable,on_delete=models.CASCADE)
     service_name=  models.CharField(max_length=30)
     service_price=models.FloatField()
     service_desc = models.TextField()
     status= models.CharField(max_length=30,choices=SERVICE_STATUS)
     timestamp= models.DateTimeField(auto_now=True)
+
+
+# class garage_profile(models.Model):
+#     user_id =models.ForeignKey(logintable,on_delete=models.CASCADE)
+#     location_id= models.ForeignKey()
+#
