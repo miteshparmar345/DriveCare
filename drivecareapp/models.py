@@ -22,11 +22,13 @@ class registertable(models.Model):
     def __str__(self):
         return self.name
 
-# class contactpage(models.Model):
-#     name = models.CharField(max_length=50)
-#     email= models.EmailField()
-#     phone= models.BigIntegerField()
-#     massage= models.TextField()
+class contactpage(models.Model):
+    name = models.CharField(max_length=50)
+    email= models.EmailField()
+    phone= models.BigIntegerField()
+    massage= models.TextField()
+    subject= models.CharField(max_length=50)
+    timestamp=models.DateTimeField(auto_now=True)
 
 class category(models.Model):
     cat_name= models.CharField(max_length=30)
@@ -48,3 +50,11 @@ class services(models.Model):
     service_desc = models.TextField()
     status= models.CharField(max_length=30,choices=SERVICE_STATUS)
     timestamp= models.DateTimeField(auto_now=True)
+
+# username profile
+class user_profile(models.Model):
+    user = models.ForeignKey(registertable,on_delete=models.CASCADE)
+    address
+
+
+

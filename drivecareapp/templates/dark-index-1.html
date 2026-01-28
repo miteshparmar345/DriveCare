@@ -155,12 +155,9 @@
                             </div>
                             <div class="de-flex-col">
                                 <div class="menu_side_area">
-                                        {% if request.session.log_id %}
                                         <a href="/logout" class="btn-main">Logout</a>
                                         <span id="menu-btn">Welcome,{{ request.session.log_name }}</span>
-                                    {% else %}
                                         <a href="login.html" class="btn-main">Sign In</a>
-                                    {% endif %}
                                 </div>
                             </div>
                         </div>

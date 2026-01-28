@@ -21,7 +21,7 @@ def checklogin(request):
         request.session['log_role']=userdata.role
         request.session.save()
         messages.success(request,'Login Successful')
-        return render(request,'dark-index-1.html')
+        return render(request,'index.html')
     except registertable.DoesNotExist:
         messages.error(request,'Login Unsuccessful')
     return render(request,'login.html')
