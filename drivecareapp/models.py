@@ -28,29 +28,15 @@ class contactpage(models.Model):
     phone= models.BigIntegerField()
     massage= models.TextField()
 
-class category(models.Model):
+
+
+class servicecategory(models.Model):
     cat_name= models.CharField(max_length=30)
 
     def __str__(self):
         return self.cat_name
 
-
 SERVICE_STATUS=[
     ('Available','Available'),
     ('Unavailable', 'Unavailable'),
 ]
-
-class services(models.Model):
-    cat_id=models.ForeignKey(category,on_delete=models.CASCADE)
-    garage_id=models.ForeignKey(logintable,on_delete=models.CASCADE)
-    service_name=  models.CharField(max_length=30)
-    service_price=models.FloatField()
-    service_desc = models.TextField()
-    status= models.CharField(max_length=30,choices=SERVICE_STATUS)
-    timestamp= models.DateTimeField(auto_now=True)
-
-
-# class garage_profile(models.Model):
-#     user_id =models.ForeignKey(logintable,on_delete=models.CASCADE)
-#     location_id= models.ForeignKey()
-#
