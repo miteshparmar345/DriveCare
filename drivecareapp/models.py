@@ -36,7 +36,7 @@ class servicecategory(models.Model):
     def __str__(self):
         return self.cat_name
 
-SERVICE_STATUS=[
-    ('Available','Available'),
-    ('Unavailable', 'Unavailable'),
-]
+# SERVICE_STATUS=[
+#     ('Available','Available'),
+#     ('Unavailable', 'Unavailable'),
+# ]

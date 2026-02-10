@@ -65,37 +65,21 @@ def contact(request):
 #     # insert_query= contactpage(name=name,email=email,phone=phone,message=message)
 #     # insert_query.save()
     return render(request,'contact.html')
-def dark_index_1(request):
-    return render(request,'dark-index-1.html')
-def dark_index_2(request):
-    return render(request,'02_dark-index-2.html')
-def homepage2(request):
-    return render(request,'index-2.html')
-def homepage_3(request):
-    return render(request,'index-3.html')
-def homepage_4(request):
-    return render(request,'index-4.html')
-def homepage_5(request):
-    return render(request,'index-5.html')
-def homepage_6(request):
-    return render(request,'index-6.html')
+
 def error_404(request):
     return render(request,'404.html')
 def cars(request):
     return render(request,'cars.html')
-def dark_cars(request):
-    return render(request,'02_dark-cars.html')
-def dark_car_list(request):
-    return render(request,'02_dark-cars-list.html')
-def cars_list(request):
-    return render(request,'cars-list.html')
-def car_single(request):
-    return render(request,'car-single.html')
-def dark_car_single(request):
-    return render(request,'02_dark-car-single.html')
 
 # quick-booking
-def quick_booking(request):
-    return render(request,'quick-booking.html')
-def booking(request):
-    return render(request,'booking.html')
+def quickbooking(request):
+    return render(request,'quickbooking.html')
+
+def account_booking(request):
+    return render(request,'accountbooking.html')
+
+def account_dashboard(request):
+    return render(request,'accountdashboard.html')
+
+def account_profile(request):
+    return render(request,'accountprofile.html')

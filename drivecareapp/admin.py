@@ -16,8 +16,8 @@ admin.site.register(logintable,Userdata)
 
 class showcat(admin.ModelAdmin):
     list_display = ['id','cat_name']
-admin.site.register(category,showcat)
+admin.site.register(servicecategory,showcat)
 
-class showservices(admin.ModelAdmin):
-    list_display = ['id','cat_id','garage_id','service_name','service_price','service_desc','status','timestamp']
-admin.site.register(services,showservices)
+# class showservices(admin.ModelAdmin):
+#     list_display = ['id','cat_id','garage_id','service_name','service_price','service_desc','status','timestamp']
+# admin.site.register(services,showservices)
